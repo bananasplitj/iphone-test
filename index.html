@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Antonio:wght@100..700&family=Dosis:wght@200..800&family=Fjord+One&family=Homemade+Apple&family=Permanent+Marker&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full-Width Images with Popups and Hover Effects</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Recipe Page</title>
+  <link rel="stylesheet" href="iPhone_styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Ingredients 이미지 박스 -->
-    <div class="box ingredients-box" onclick="showPopup('ingredients')">
-      <img src="2.jpg" alt="Ingredients" class="image">
-      <span>Ingredients</span>
+    <!-- 로고 -->
+    <div class="logo-box">
+      <img src="logo.jpg" alt="SpinRecipe Logo" class="logo">
     </div>
 
-    <!-- Instructions 이미지 박스 -->
-    <div class="box instructions-box" onclick="showPopup('instructions')">
-      <img src="3.jpg" alt="Instructions" class="image">
-      <span>Instructions</span>
+    <!-- 이미지 박스 -->
+    <div class="image-box">
+      <img src="1.webp" alt="Penne Arrabbiata" class="recipe-image">
+      <div class="text-row">
+        <span class="title">Penne<br>Arrabbiata</span>
+        <span class="prep-cook-time">Prep: 10 min<br>Cook: 30 min</span>
+      </div>
     </div>
-  </div>
 
-  <!-- 왼쪽 하단 로고 박스 -->
-  <div class="logo-box">
-  <img src="logo.jpg" alt="Instructions" class="image"></div>
-
-  <!-- 오른쪽 하단 SPIN 버튼 -->
-  <button class="spin-button" onclick="showPopup('spin')">SPIN</button>
-
-  <!-- 팝업 창 -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <p id="popup-text"></p>
+    <!-- 재료 목록 -->
+    <div class="ingredients">
+      <h2>Ingredients</h2>
+      <ul>
+        <li><input type="checkbox" id="ingredient1"> <label for="ingredient1">1 pound penne rigate</label></li>
+        <li><input type="checkbox" id="ingredient2"> <label for="ingredient2">3 Tablespoons olive oil</label></li>
+        <li><input type="checkbox" id="ingredient3"> <label for="ingredient3">3 cloves garlic</label></li>
+        <li><input type="checkbox" id="ingredient4"> <label for="ingredient4">1/4 teaspoon crushed red pepper flakes</label></li>
+        <li><input type="checkbox" id="ingredient5"> <label for="ingredient5">1 28-ounce can whole peeled tomatoes</label></li>
+      </ul>
     </div>
-  </div>
+    <div class="instructions">
+  <h2>Instructions</h2>
+  <ol class="instruction-list">
+    <li><span class="instruction-item" onclick="toggleBold(this)">1. Cook pasta in a large pot of boiling water, according to package instructions, until tender.</span></li>
+    <li><span class="instruction-item" onclick="toggleBold(this)">2. Heat olive oil in a large skillet over medium heat. Add garlic and crushed red pepper; cook, stirring for 30 seconds.</span></li>
+    <li><span class="instruction-item" onclick="toggleBold(this)">3. Add tomatoes, crushing them roughly with the back of a wooden spoon, and tomato paste. Simmer for 5-10 minutes.</span></li>
+    <li><span class="instruction-item" onclick="toggleBold(this)">4. When pasta is cooked, drain the water and add it to the sauce. Toss well.</span></li>
+    <li><span class="instruction-item" onclick="toggleBold(this)">5. Serve immediately topped with grated pecorino or parmesan cheese and fresh parsley.</span></li>
+  </ol>
+</div>
+</div>
 
-  <script src="script.js"></script>
-  
+ <!-- 스핀 버튼 -->
+    <div class="spin-box">
+      <button class="spin-button" onclick="showPopup()">SPIN</button>
+    </div>
+
+    <!-- 팝업 -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p>Spinning for a new recipe!</p>
+      </div>
+    </div>
+
+  <script src="iPhone_script.js"></script>
 </body>
 </html>
+
